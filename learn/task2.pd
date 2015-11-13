@@ -1,0 +1,32 @@
+#N canvas 449 254 439 340 10;
+#X obj 69 103 synth1~;
+#X obj 149 103 synth1~;
+#X obj 229 103 synth1~;
+#X floatatom 69 65 5 0 0 0 - - -;
+#X floatatom 149 65 5 0 0 0 - - -;
+#X floatatom 229 65 5 0 0 0 - - -;
+#X obj 69 238 *~ 0.1;
+#X obj 69 273 dac~;
+#X text 229 40 enter value in number box;
+#X text 277 64 hold Shift for tuning;
+#X obj 69 171 *~;
+#X obj 87 127 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9800 1;
+#X obj 84 149 sig~;
+#X obj 149 201 *~;
+#X obj 167 157 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8700 1;
+#X obj 164 179 sig~;
+#X connect 0 0 10 0;
+#X connect 1 0 13 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 10 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;

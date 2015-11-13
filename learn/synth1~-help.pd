@@ -1,0 +1,16 @@
+#N canvas 315 198 393 327 10;
+#X obj 23 26 cnv 15 300 50 empty empty [synth1~] 20 12 0 20 -233017
+-66577 0;
+#X obj 84 191 synth1~;
+#X obj 87 110 hsl 128 15 200 2000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 104 138 6 0 0 0 - - -;
+#X obj 84 222 *~ 0.1;
+#X obj 84 273 dac~;
+#X obj 84 161 sig~;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 6 0 1 0;

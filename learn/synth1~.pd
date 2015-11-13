@@ -1,0 +1,7 @@
+#N canvas 253 213 383 234 10;
+#X obj 46 168 outlet~;
+#X text 109 39 synth frequency;
+#X obj 46 41 inlet~;
+#X obj 46 104 osc~;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;

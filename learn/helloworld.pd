@@ -1,0 +1,15 @@
+#N canvas 138 150 517 377 10;
+#X obj 179 269 dac~;
+#X obj 179 151 osc~ 440;
+#X obj 179 207 *~ 0.1;
+#X obj 182 100 hsl 128 15 200 2000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X text 179 78 frequency range: [200 \, 2000];
+#X text 229 205 amplitude scale;
+#X text 229 267 output: Digital Audio Converter;
+#X text 177 27;
+#X text 28 18 comment;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 1 0;
