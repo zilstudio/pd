@@ -1,0 +1,53 @@
+#N canvas 270 99 668 446 10;
+#X obj 26 190 osc~;
+#X obj 26 282 dac~;
+#X text 103 175 oscillator;
+#X text 100 282 digital-to-analog converter;
+#X obj 29 146 hsl 128 15 0 3000 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 1107 1;
+#X text 177 145 hsl horizontal slider;
+#X obj 26 236 *~;
+#X obj 80 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 103 208 tgl;
+#X obj 80 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 26 100 mtof;
+#X obj 29 56 hsl 128 15 36 85 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 6220 1;
+#X floatatom 29 28 5 0 0 0 - - -;
+#X obj 323 190 osc~;
+#X obj 323 282 dac~;
+#X text 400 175 oscillator;
+#X text 397 282 digital-to-analog converter;
+#X obj 326 146 hsl 128 15 0 3000 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 1478 1;
+#X text 474 145 hsl horizontal slider;
+#X obj 323 236 *~;
+#X obj 377 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 400 208 tgl;
+#X obj 377 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 323 100 mtof;
+#X obj 326 56 hsl 128 15 36 85 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 7516 1;
+#X floatatom 326 28 5 0 0 0 - - -;
+#X connect 0 0 6 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 6 1;
+#X connect 9 0 7 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 19 0;
+#X connect 17 0 13 0;
+#X connect 19 0 14 0;
+#X connect 19 0 14 1;
+#X connect 20 0 19 1;
+#X connect 22 0 20 0;
+#X connect 23 0 17 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;

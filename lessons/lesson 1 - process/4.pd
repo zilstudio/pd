@@ -1,0 +1,58 @@
+#N canvas 231 109 800 432 10;
+#X obj 36 200 osc~;
+#X obj 36 292 dac~;
+#X text 113 185 oscillator;
+#X text 110 292 digital-to-analog converter;
+#X obj 39 157 hsl 128 15 0 3000 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 0 1;
+#X text 187 155 hsl horizontal slider;
+#X obj 36 246 *~;
+#X obj 90 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 113 218 tgl;
+#X obj 90 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 36 110 mtof;
+#X obj 39 66 hsl 128 15 36 100 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 0 1;
+#X floatatom 39 38 5 0 0 0 - - -;
+#X obj 342 201 osc~;
+#X obj 342 293 dac~;
+#X text 419 186 oscillator;
+#X text 416 293 digital-to-analog converter;
+#X obj 344 157 hsl 128 15 0 3000 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 0 1;
+#X text 493 156 hsl horizontal slider;
+#X obj 342 247 *~;
+#X obj 396 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 419 219 tgl;
+#X obj 396 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 342 111 mtof;
+#X obj 345 67 hsl 128 15 36 100 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 0 1;
+#X floatatom 345 39 5 0 0 0 - - -;
+#X obj 152 223 hsl 128 15 0 1 0 0 empty empty добрый_вечер
+-2 -8 0 20 -4160 -4034 -258113 0 1;
+#X obj 396 248 * 0.5;
+#X connect 0 0 6 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 6 1;
+#X connect 9 0 7 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 19 0;
+#X connect 17 0 13 0;
+#X connect 19 0 14 0;
+#X connect 19 0 14 1;
+#X connect 20 0 27 0;
+#X connect 22 0 20 0;
+#X connect 23 0 17 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
+#X connect 26 0 6 1;
+#X connect 27 0 19 1;
