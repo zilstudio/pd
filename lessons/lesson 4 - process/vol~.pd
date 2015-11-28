@@ -1,0 +1,15 @@
+#N canvas 180 127 450 300 10;
+#X obj 133 168 *~;
+#X obj 133 52 inlet~;
+#X obj 133 203 outlet~;
+#X obj 200 52 inlet control;
+#X obj 200 82 dbtorms;
+#X text 295 50 in decibels;
+#X obj 200 109 sig~;
+#X obj 200 137 lop~ 10;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 1;

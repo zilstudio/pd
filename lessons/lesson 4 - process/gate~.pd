@@ -1,0 +1,13 @@
+#N canvas 43 90 450 300 10;
+#X obj 81 44 inlet~;
+#X obj 81 141 *~;
+#X obj 81 178 outlet~;
+#X obj 163 44 inlet control;
+#X obj 163 77 sig~;
+#X obj 163 105 lop~ 5;
+#X text 215 106 Low pass filter;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 1;
