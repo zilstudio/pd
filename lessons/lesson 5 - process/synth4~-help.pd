@@ -1,0 +1,11 @@
+#N canvas 57 82 649 360 36;
+#X obj 50 166 synth4~;
+#X floatatom 50 87 5 0 0 0 - - -;
+#X floatatom 201 87 5 0 0 0 - - -;
+#X obj 50 257 dac~;
+#X text 46 31 carrier;
+#X text 205 31 modulator;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;

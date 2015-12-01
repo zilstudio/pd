@@ -1,0 +1,14 @@
+#N canvas 46 39 641 395 36;
+#X text 77 54 0..1;
+#X text 75 122 0..127;
+#X text 250 56 C2..C3;
+#X text 251 118 freq;
+#X obj 420 79 hsl 128 15 72 84 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5300 1;
+#X obj 417 220 osc~;
+#X obj 417 282 dac~;
+#X obj 417 153 mtof;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 5 0;

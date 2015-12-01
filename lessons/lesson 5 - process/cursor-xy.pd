@@ -1,0 +1,12 @@
+#N canvas 58 23 512 395 36;
+#X obj 147 46 inlet;
+#X obj 147 114 cursor;
+#X obj 147 247 route x y;
+#X obj 147 180 route motion;
+#X obj 147 312 outlet;
+#X obj 297 312 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 2 0;
