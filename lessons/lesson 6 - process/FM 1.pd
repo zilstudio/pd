@@ -1,0 +1,31 @@
+#N canvas -101 121 841 548 10;
+#X obj 190 114 osc~;
+#X obj 269 245 osc~;
+#X obj 354 63 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 300 256;
+#X obj 266 311 dac~;
+#X obj 353 139 sig~;
+#X obj 189 162 *~;
+#X obj 190 63 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 300 256;
+#X obj 190 87 sig~;
+#X obj 267 63 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 300 256;
+#X obj 266 139 sig~;
+#X text 323 241 несущий осцилятор;
+#X text 230 110 модулирующий осцилятор;
+#X text 184 12 частота модулирующего осцилятора
+;
+#X text 272 11 индекс модуляции;
+#X text 353 16 частота несущего осцилятора
+;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 1;

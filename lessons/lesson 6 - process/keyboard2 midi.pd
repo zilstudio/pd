@@ -1,0 +1,41 @@
+#N canvas 176 88 703 439 10;
+#X obj 145 112 key;
+#X obj 215 370 noteout;
+#X obj 157 153 prepend set;
+#X msg 184 194 0;
+#X obj 263 110 keyup;
+#X obj 391 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 261 153 prepend set;
+#X msg 289 189 50;
+#X obj 152 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 252 197 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 313 305 60 0;
+#X obj 132 232 select 97 119 115 101 100;
+#X msg 134 262 60;
+#X msg 163 262 61;
+#X msg 197 261 62;
+#X msg 229 260 63;
+#X msg 268 262 64;
+#X msg 133 304 \$1 100;
+#X connect 0 0 2 0;
+#X connect 0 0 11 0;
+#X connect 2 0 3 0;
+#X connect 2 0 8 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 9 0;
+#X connect 10 0 1 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 14 0;
+#X connect 11 3 15 0;
+#X connect 11 4 16 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 17 0;
+#X connect 17 0 1 0;
