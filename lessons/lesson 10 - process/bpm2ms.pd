@@ -1,0 +1,13 @@
+#N canvas 92 172 236 225 10;
+#X obj 64 37 inlet bpm;
+#X obj 64 67 / 60;
+#X obj 64 96 swap 1;
+#X obj 64 125 /;
+#X obj 64 153 * 1000;
+#X obj 64 184 outlet ms;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

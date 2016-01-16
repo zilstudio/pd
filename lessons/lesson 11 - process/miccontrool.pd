@@ -1,0 +1,16 @@
+#N canvas 291 303 514 332 10;
+#X declare -lib sigpack~;
+#X obj 249 41 import sigpack~;
+#X obj 91 264 dac~;
+#X obj 38 42 adc~ 1;
+#X obj 38 72 env~;
+#X obj 38 101 dbtorms;
+#X obj 90 149 osc~ 200;
+#X obj 74 201 *~;
+#X obj 38 134 sig~;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 1;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
