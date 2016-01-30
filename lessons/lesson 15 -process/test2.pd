@@ -1,0 +1,14 @@
+#N canvas 346 147 630 459 36;
+#X obj 99 242 pack f f;
+#X msg 99 366 25 25;
+#X obj 99 307 prepend set;
+#X floatatom 99 40 5 0 0 0 - - -;
+#X floatatom 272 39 5 0 0 0 - - -;
+#X obj 426 38 trigger;
+#X obj 272 125 t b f;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 0 0;
+#X connect 6 1 0 1;

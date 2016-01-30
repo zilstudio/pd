@@ -1,0 +1,25 @@
+#N canvas 251 113 986 670 36;
+#X obj 167 161 noise~;
+#X obj 167 568 dac~;
+#X obj 167 489 bp~ 2000 10;
+#X obj 381 164 random 2000;
+#X obj 381 97 metro 1000;
+#X obj 382 69 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 381 353 line;
+#X msg 381 290 \$1 400;
+#X obj 381 222 + 300;
+#X msg 596 223 1 2 3 4 5;
+#X msg 596 288 \$5 \$4 \$3 \$2 \$1;
+#X obj 596 359 print;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 1;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;

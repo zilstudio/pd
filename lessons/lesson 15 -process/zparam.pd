@@ -1,0 +1,10 @@
+#N canvas 379 168 530 296 24;
+#X obj 77 92 tof/param /\$1;
+#X obj 77 119 change;
+#X obj 77 143 outlet;
+#X obj 77 64 inlet;
+#X text 78 24 [zparam slider_freq];
+#X text 244 90 [tof/param /slider_freq];
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
