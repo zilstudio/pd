@@ -1,0 +1,14 @@
+#N canvas 376 208 450 300 10;
+#X obj 105 149 delay~ 44100 22050;
+#X obj 56 192 *~ 0.5;
+#X obj 110 194 *~ -0.5;
+#X obj 77 86 inlet~;
+#X obj 64 232 outlet~;
+#X obj 121 229 outlet~;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 2 0;

@@ -1,0 +1,14 @@
+#N canvas 0 22 975 508 36;
+#X floatatom 219 59 5 0 0 0 - - -;
+#X obj 219 216 prepend set;
+#X msg 219 337 a b c e d;
+#X text 245 271 set freq 39;
+#X msg 503 55 freq 39;
+#X msg 219 133 freq \$1 \$2 \$3;
+#X msg 579 247 \$1 \$2 \$3 \$5 \$4;
+#X msg 579 162 list a b c d e;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
