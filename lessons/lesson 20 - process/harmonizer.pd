@@ -1,0 +1,13 @@
+#N canvas 962 320 473 347 10;
+#X obj 102 53 adc~ 1;
+#X obj 102 83 fiddle~;
+#X obj 102 125 mtof;
+#X obj 102 166 / 2;
+#X obj 102 201 osc~;
+#X obj 102 232 output~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
