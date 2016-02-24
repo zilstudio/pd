@@ -1,0 +1,18 @@
+#N canvas 1263 205 437 268 10;
+#X obj 53 59 metro \$1;
+#X obj 53 30 inlet control;
+#X obj 53 175 + \$1;
+#X obj 156 31 loadbang;
+#X obj 156 58 f \$2;
+#X obj 156 87 - \$1;
+#X obj 53 143 random;
+#X obj 53 208 outlet;
+#X text 229 31 args: min-time max-time;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
