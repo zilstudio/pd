@@ -1,0 +1,76 @@
+#N canvas -19 126 661 499 10;
+#X obj 454 39 gparam;
+#X obj 70 424 output~;
+#X obj 72 184 part1;
+#X obj 72 158 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 103 157 hsl 128 15 50 400 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 100 126 zparam part1-speed;
+#X obj 177 255 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 177 281 part2;
+#X obj 227 319 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8890 1;
+#X floatatom 254 346 5 0 0 0 - - -;
+#X obj 371 318 zparam xfade;
+#X obj 122 365 zfade~;
+#X obj 72 365 zfade~;
+#X obj 277 108 metro 1000;
+#X obj 257 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 277 134 f 0;
+#X obj 324 134 + 1;
+#X floatatom 277 161 5 0 0 0 - - -;
+#X obj 277 191 select 1 10 20 30;
+#X msg 277 259 1;
+#X msg 312 225 20;
+#X msg 339 283 1;
+#X msg 358 247 0.7;
+#X msg 421 234 0;
+#X obj 480 267 line;
+#X msg 488 210 20 10000;
+#X msg 458 190 400;
+#X obj 467 111 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 492 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 467 135 bpmmetro 120;
+#X connect 2 0 12 0;
+#X connect 2 1 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 12 1;
+#X connect 7 1 11 1;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 8 0 11 2;
+#X connect 8 0 12 2;
+#X connect 10 0 8 0;
+#X connect 11 0 1 1;
+#X connect 12 0 1 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 18 0 26 0;
+#X connect 18 1 25 0;
+#X connect 18 2 21 0;
+#X connect 18 2 22 0;
+#X connect 18 3 23 0;
+#X connect 19 0 3 0;
+#X connect 21 0 6 0;
+#X connect 22 0 8 0;
+#X connect 23 0 3 0;
+#X connect 24 0 4 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 0;
+#X connect 27 0 29 0;
+#X connect 29 0 28 0;

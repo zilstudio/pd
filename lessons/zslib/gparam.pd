@@ -1,0 +1,23 @@
+#N canvas 130 184 453 312 10;
+#X obj 94 226 tof/param file;
+#X obj 101 101 cnv 15 118 38 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 109 121 hradio 10 1 0 8 \$0-param-s \$0-param-r presets 0 -8
+0 10 -262144 -260097 -262144 1;
+#X obj 194 108 bng 10 250 50 0 \$0-read-s \$0-read-r L 17 6 0 10 -4034
+-1 -262144;
+#X obj 194 121 bng 10 250 50 0 \$0-write-s \$0-write-r S 17 6 0 10
+-260097 -1 -262144;
+#X obj 94 190 f;
+#X obj 175 190 f;
+#X obj 211 226 s gparams;
+#X obj 199 30 loadbang;
+#X connect 2 0 5 1;
+#X connect 2 0 6 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 1;
+#X connect 6 0 7 0;
+#X connect 8 0 3 0;
+#X coords 0 -1 1 1 120 40 1 100 100;

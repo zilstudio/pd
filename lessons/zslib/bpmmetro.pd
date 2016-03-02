@@ -1,0 +1,14 @@
+#N canvas 315 249 451 225 10;
+#X obj 130 96 expr 60/$f1 * 1000;
+#X obj 73 125 metro;
+#X obj 130 33 inlet bpm;
+#X obj 25 33 inlet control;
+#X obj 73 157 outlet;
+#X obj 130 64 f \$1;
+#X obj 215 35 loadbang;
+#X connect 0 0 1 1;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
