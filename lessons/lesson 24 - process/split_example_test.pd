@@ -1,0 +1,6 @@
+#N canvas 635 341 450 300 10;
+#X obj 113 125 split_example 10 20;
+#X floatatom 113 86 5 0 0 0 - - -;
+#X floatatom 113 165 5 0 0 0 - - -;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
