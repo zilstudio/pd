@@ -1,0 +1,5 @@
+#N canvas 190 106 450 300 10;
+#X msg 178 81 bang;
+#X obj 178 130 print;
+#X obj 243 100 opus_encode;
+#X connect 0 0 2 0;
