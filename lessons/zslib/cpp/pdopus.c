@@ -1,14 +1,10 @@
-#include <opus/opus.h>
-#include "stream.h"
-#include <samplerate.h>
 #include <m_pd.h>
 #include <stdlib.h>
-#include <math.h>
+#include <assert.h>
 
-void t() {
-    Streamer s = streamer_create("123", 200);
-    streamer_destroy(s);
-}
+#include "resample.h"
+#include "encoder.h"
+#include "stream.h"
 
 static t_class * opus_encode_class;
 
@@ -16,8 +12,14 @@ typedef struct _opus {
     t_object  x_obj;
     t_float f;
     t_outlet* x_out;
-    Streamer  encoder;
-    SRC_DATA samplerate_data;
+    Resampler * resampler;
+    Encoder * encoder;
+    Streamer * streamer;
+
+    // reblock
+    t_sample * reblock_buf;
+    size_t reblock_buf_size;
+    t_sample * cur_block;
 } t_opus_encode;
 
 void opus_encode_bang(t_opus_encode *x)
@@ -27,22 +29,33 @@ void opus_encode_bang(t_opus_encode *x)
 
 void *opus_encode_new(void)
 {
+    // INLETS
     t_opus_encode *x = (t_opus_encode *)pd_new(opus_encode_class);
-    x->encoder = streamer_create("123", 200);
     x->x_out = outlet_new(&x->x_obj, &s_signal);
-    x->samplerate_data.src_ratio = 48000.0/sys_getsr();
-    x->samplerate_data.data_in = 0;
-    x->samplerate_data.input_frames = sys_getblksize();
-    x->samplerate_data.output_frames = ceil(x->samplerate_data.input_frames * x->samplerate_data.src_ratio);
-    x->samplerate_data.data_out = calloc(x->samplerate_data.output_frames, 1);
+
+    // OPUS
+    x->encoder = encoder_create(48000, sys_getblksize());
+
+    // samplerate
+    x->resampler = resampler_create(48000.0/44100.0, sys_getblksize());
+
+    // streamer
+    x->streamer = streamer_create("127.0.0.1", 4321);
+
+    // reblock
+    x->reblock_buf_size = 240;
+    x->reblock_buf = malloc(x->reblock_buf_size * sizeof(t_sample));
+    x->cur_block = x->reblock_buf;
+
     return (void *)x;
 }
 
 void opus_encode_free(t_opus_encode * x) {
-    streamer_destroy(x->encoder);
+    free(x->reblock_buf);
+    streamer_destroy(x->streamer);
+    resampler_destroy(x->resampler);
+    encoder_destroy(x->encoder);
     outlet_free(x->x_out);
-    free(x->samplerate_data.data_out);
-    //    resample_free(&x->resample);
 }
 
 t_int *opus_encode_tilde_perform(t_int *w) {
@@ -50,11 +63,37 @@ t_int *opus_encode_tilde_perform(t_int *w) {
     t_sample *in1 = (t_sample*)(w[2]);
     t_sample *out = (t_sample*)(w[3]);
     int n = (int)(w[4]);
-    while (n--) *out++ = (*in1++)* 0.5;
 
+    resampler_set_input(x->resampler, in1);
+    resampler_process(x->resampler);
 
-    //    resamplefrom_dsp(x->resample, in1, n, x->resample, 0);
+    t_float *pcm = resampler_get_output(x->resampler);
+    t_float *cur_pcm = pcm;
+    size_t pcm_size = resampler_get_output_size(x->resampler);
 
+    assert(pcm_size > sys_getblksize());
+
+    while(pcm_size--) {
+        // add bytes
+        *x->cur_block = (*cur_pcm++);
+
+        // block filled
+        if(x->cur_block - x->reblock_buf == x->reblock_buf_size) {
+            // process
+            // encode
+            size_t enc_bytes = encoder_process(x->encoder, pcm);
+            unsigned char *enc = encoder_out(x->encoder);
+            // stream
+            streamer_sendto(x->streamer, enc, enc_bytes);
+
+            // flush block
+            x->cur_block = x->reblock_buf;
+        } else {
+            x->cur_block++;
+        }
+    }
+
+//    while (n--) *out++ = (*++)* 0.5;
     return (w+5);
 }
 

@@ -9,11 +9,12 @@ extern "C" {
 #endif
 
 struct Streamer_;
-typedef struct Streamer_ * Streamer;
-int stream_to(const char * msg, size_t len, Streamer);
+typedef struct Streamer_ Streamer;
 
-Streamer streamer_create(const char * addr, int port);
-void streamer_destroy(Streamer s);
+Streamer *streamer_create(const char * addr, int port);
+void streamer_destroy(Streamer *s);
+
+void streamer_sendto(Streamer *s, const void *data, size_t len);
 
 #ifdef __cplusplus
 }
