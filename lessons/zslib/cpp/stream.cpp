@@ -1,8 +1,8 @@
-//#include <boost/asio.hpp>
+#include <boost/asio.hpp>
 #include "stream.h"
 #include <m_pd.h>
 
-//using namespace boost::asio;
+using namespace boost::asio;
 
 struct Streamer_ {
     int port_;
