@@ -3,7 +3,6 @@ set(CMAKE_OSX_ARCHITECTURES "i386")
 cmake_minimum_required(VERSION 2.8)
 aux_source_directory(. SRC_LIST)
 add_library(opus_encode SHARED pdopus.c stream.cpp resample.cpp encoder.cpp)
-add_library(opus_decode SHARED opus_decode.c)
 add_library(udp_send~ SHARED udp_send~.c)
 
 add_executable(udp_receieve udp_receive.cpp)
@@ -14,21 +13,13 @@ if (APPLE)
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES SUFFIX .pd_darwin)
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES PREFIX "")
 
-    SET_TARGET_PROPERTIES(opus_decode PROPERTIES SUFFIX .pd_darwin)
-    SET_TARGET_PROPERTIES(opus_decode PROPERTIES PREFIX "")
-
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES SUFFIX .pd_darwin)
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES PREFIX "")
 endif()
 
 if(UNIX AND NOT APPLE)
-#    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined suppress")
-#    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -undefined suppress")
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES SUFFIX .pd_linux)
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES PREFIX "")
-
-    SET_TARGET_PROPERTIES(opus_decode PROPERTIES SUFFIX .pd_linux)
-    SET_TARGET_PROPERTIES(opus_decode PROPERTIES PREFIX "")
 
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES SUFFIX .pd_linux)
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES PREFIX "")

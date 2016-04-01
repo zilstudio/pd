@@ -7,7 +7,6 @@
 
 using boost::asio::ip::udp;
 
-
 enum { max_length = 1024 };
 
 void server(boost::asio::io_service& io_service, unsigned short port){
