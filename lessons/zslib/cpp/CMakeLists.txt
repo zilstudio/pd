@@ -19,7 +19,21 @@ if (APPLE)
 
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES SUFFIX .pd_darwin)
     SET_TARGET_PROPERTIES(udp_send~ PROPERTIES PREFIX "")
-endif(APPLE)
+endif()
+
+if(UNIX AND NOT APPLE)
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined suppress -flat_namespace")
+    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -undefined suppress -flat_namespace")
+    SET_TARGET_PROPERTIES(opus_encode PROPERTIES SUFFIX .pd_linux)
+    SET_TARGET_PROPERTIES(opus_encode PROPERTIES PREFIX "")
+
+    SET_TARGET_PROPERTIES(opus_decode PROPERTIES SUFFIX .pd_linux)
+    SET_TARGET_PROPERTIES(opus_decode PROPERTIES PREFIX "")
+
+    SET_TARGET_PROPERTIES(udp_send~ PROPERTIES SUFFIX .pd_linux)
+    SET_TARGET_PROPERTIES(udp_send~ PROPERTIES PREFIX "")
+endif()
+
 
 if (APPLE)
     option(FAT_BINARY "Build a fat binary (32bit and 64bit)" OFF)
