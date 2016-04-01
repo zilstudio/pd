@@ -2,23 +2,33 @@ project(testOpus)
 set(CMAKE_OSX_ARCHITECTURES "i386")
 cmake_minimum_required(VERSION 2.8)
 aux_source_directory(. SRC_LIST)
-add_library(opus_encode SHARED pdopus.c opus_decode.c stream.cpp resample.cpp encoder.cpp reblocker.cpp)
+add_library(opus_encode SHARED pdopus.c stream.cpp resample.cpp encoder.cpp reblocker.cpp)
+add_library(opus_decode SHARED opus_decode.c)
+add_library(udp_send~ SHARED udp_send~.c)
+
+add_executable(udp_receieve udp_receive.cpp)
 
 if (APPLE)
-
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined suppress -flat_namespace")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -undefined suppress -flat_namespace")
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES SUFFIX .pd_darwin)
     SET_TARGET_PROPERTIES(opus_encode PROPERTIES PREFIX "")
+
+    SET_TARGET_PROPERTIES(opus_decode PROPERTIES SUFFIX .pd_darwin)
+    SET_TARGET_PROPERTIES(opus_decode PROPERTIES PREFIX "")
+
+    SET_TARGET_PROPERTIES(udp_send~ PROPERTIES SUFFIX .pd_darwin)
+    SET_TARGET_PROPERTIES(udp_send~ PROPERTIES PREFIX "")
 endif(APPLE)
 
 if (APPLE)
     option(FAT_BINARY "Build a fat binary (32bit and 64bit)" OFF)
 endif(APPLE)
 
-find_package(Boost 1.40 COMPONENTS system REQUIRED)
+find_package(Boost 1.40 COMPONENTS system thread REQUIRED)
 if(Boost_FOUND)
     target_link_libraries(opus_encode ${Boost_LIBRARIES})
+    target_link_libraries(udp_receieve ${Boost_LIBRARIES})
 endif()
 
 find_path(OPUS_INCLUDE NAME opus/opus.h PATHS /usr/local/include)
@@ -67,6 +77,6 @@ else()
 endif()
 
 add_custom_target(run
-    COMMAND open pdopus-help.pd;)
+    COMMAND open udp_send~-help.pd;)
 
 

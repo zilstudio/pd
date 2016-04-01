@@ -40,7 +40,7 @@ void *opus_encode_new(void)
     x->resampler = resampler_create(48000.0/44100.0, sys_getblksize());
 
     // streamer
-    x->streamer = streamer_create("127.0.0.1", 4321);
+    x->streamer = streamer_create("192.168.0.90", 4321);
 
     // reblock
     x->reblock_buf_size = 240;
@@ -73,25 +73,7 @@ t_int *opus_encode_tilde_perform(t_int *w) {
 
     assert(pcm_size > sys_getblksize());
 
-    while(pcm_size--) {
-        // add bytes
-        *x->cur_block = (*cur_pcm++);
-
-        // block filled
-        if(x->cur_block - x->reblock_buf == x->reblock_buf_size) {
-            // process
-            // encode
-            size_t enc_bytes = encoder_process(x->encoder, pcm);
-            unsigned char *enc = encoder_out(x->encoder);
-            // stream
-            streamer_sendto(x->streamer, enc, enc_bytes);
-
-            // flush block
-            x->cur_block = x->reblock_buf;
-        } else {
-            x->cur_block++;
-        }
-    }
+    streamer_sendto(x->streamer, in1, n * sizeof(t_sample));
 
 //    while (n--) *out++ = (*++)* 0.5;
     return (w+5);

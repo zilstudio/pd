@@ -16,6 +16,12 @@ void streamer_destroy(Streamer *s);
 
 void streamer_sendto(Streamer *s, const void *data, size_t len);
 
+struct StreamClient_;
+typedef struct StreamClient_ StreamClient;
+
+StreamClient *stream_client_create(int port);
+void stream_client_destroy(StreamClient *s);
+
 #ifdef __cplusplus
 }
 #endif
