@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 aux_source_directory(. SRC_LIST)
 add_library(opus_encode SHARED pdopus.c stream.cpp resample.cpp encoder.cpp)
 add_library(udp_send SHARED udp_send~.c)
-add_library(udp_send_broadcast SHARED udp_send2~.c stream.cpp)
+add_library(udp_send_broadcast SHARED udp_send_broadcast~.c stream.cpp)
 
 add_executable(udp_receieve udp_receive.cpp)
 
