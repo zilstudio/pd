@@ -10,14 +10,13 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "stream.h"
-
 static t_class * udp_send_tilde_class;
 
 typedef struct _opus {
     t_object  x_obj;
     t_float f;
-    int connected;
+    char connected;
+    char has_errors;
     struct hostent *hp;
     struct sockaddr_in servaddr;
     int fd;
@@ -27,8 +26,10 @@ void *udp_send_tilde_new()
 {
     // INLETS
     t_udp_send_tilde *x = (t_udp_send_tilde *)pd_new(udp_send_tilde_class);
+    outlet_new(&x->x_obj, &s_float);
 
     x->connected = 0;
+    x->has_errors = 0;
     /* fill in the server's address and data */
     memset((char*)&x->servaddr, 0, sizeof(x->servaddr));
     x->servaddr.sin_family = AF_INET;
@@ -52,7 +53,14 @@ t_int *udp_send_tilde_perform(t_int *w) {
         if (sendto(x->fd, in1, n * sizeof(t_sample), 0,
                    (struct sockaddr *)&x->servaddr,
                    sizeof(x->servaddr)) < 0) {
-            error("sendto failed");
+            if(!x->has_errors) {
+                error("[udp_send~] sendto failed");
+                outlet_float(x->x_obj.ob_outlet, 0);
+                x->has_errors = 1;
+            }
+        }
+        else {
+            x->has_errors &= 0;
         }
     }
 
@@ -67,12 +75,12 @@ void udp_send_tilde_connect(t_udp_send_tilde *x, t_symbol * host, t_floatarg por
     x->hp = gethostbyname(host_);
 
     if (!x->hp) {
-        error("could not obtain address of %s\n", host_);
+        error("[udp_send~] could not obtain address of \"%s\"\n", host_);
         x->connected = 0;
         return;
     }
 
-    post("connect to: %s:%i", inet_ntoa(*((struct in_addr *)x->hp->h_addr_list[0])), port_);
+    post("[udp_send~] connect to: %s:%i", inet_ntoa(*((struct in_addr *)x->hp->h_addr_list[0])), port_);
 
     x->servaddr.sin_port = htons(port_);
     /* put the host's address into the server address structure */
@@ -85,13 +93,13 @@ void udp_send_tilde_connect(t_udp_send_tilde *x, t_symbol * host, t_floatarg por
     /* create a UDP socket */
     if ((x->fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         x->connected = 0;
-        error("cannot create socket\n");
+        error("[udp_send~] cannot create socket\n");
         return;
     }
 
     int broadcast = 1;
     if (setsockopt(x->fd, SOL_SOCKET, SO_BROADCAST, &broadcast,sizeof(broadcast)) == -1) {
-        error("broacast failed: %s", strerror(errno));
+        error("[udp_send~] broacast failed: %s", strerror(errno));
     }
 
     x->connected = 1;
@@ -107,6 +115,7 @@ void udp_send_tilde_setup(void) {
                                      (t_method) udp_send_tilde_free,
                                      sizeof(t_udp_send_tilde),
                                      CLASS_DEFAULT,
+                                     A_DEFFLOAT,
                                      0);
 
     class_addmethod(udp_send_tilde_class,

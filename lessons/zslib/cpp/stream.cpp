@@ -27,6 +27,7 @@ public:
         receiver_(addr_, port)
     {
         socket_.open(ip::udp::v4());
+        socket_.set_option(boost::asio::socket_base::broadcast(true));
     }
 
     void send(const std::string& msg) {
@@ -45,7 +46,7 @@ int stream_to(const char *msg, size_t len, Streamer)
 
 Streamer *streamer_create(const char * addr, int port)
 {
-    POST("streamer_destroy(%s, %i)", addr, port);
+    POST("streamer_create(%s, %i)", addr, port);
     return new Streamer_(addr, port);
 }
 
