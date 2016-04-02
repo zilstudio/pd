@@ -1,0 +1,4 @@
+/Users/zstudio/Documents/pd/lessons/zslib/cpp/build/CMakeFiles/edit_cache.dir
+/Users/zstudio/Documents/pd/lessons/zslib/cpp/build/CMakeFiles/rebuild_cache.dir
+/Users/zstudio/Documents/pd/lessons/zslib/cpp/build/CMakeFiles/run.dir
+/Users/zstudio/Documents/pd/lessons/zslib/cpp/build/CMakeFiles/opus_encode.dir
