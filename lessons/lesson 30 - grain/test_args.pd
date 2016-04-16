@@ -1,0 +1,14 @@
+#N canvas 166 148 450 300 10;
+#X obj 96 73 f \$1;
+#X obj 158 73 f \$2;
+#X obj 223 72 f \$3;
+#X obj 96 29 loadbang;
+#X floatatom 96 114 5 0 0 0 - - -;
+#X floatatom 158 115 5 0 0 0 - - -;
+#X floatatom 223 114 5 0 0 0 - - -;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 2 0;
