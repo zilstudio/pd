@@ -1,6 +1,6 @@
 #N canvas 538 186 617 395 10;
 #X obj 130 222 iemlib/unsig~ 10;
-#X floatatom 130 255 5 0 0 0 - - -, f 5;
+#X floatatom 130 255 5 0 0 0 - - -;
 #X obj 282 282 dac~;
 #X obj 129 146 ezline~;
 #X obj 282 192 *~ 1000;

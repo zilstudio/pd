@@ -1,0 +1,11 @@
+#N canvas 443 154 700 500 36;
+#X obj 377 158 send v1;
+#X obj 65 233 receive v1;
+#X msg 292 68 1;
+#X msg 375 70 2;
+#X msg 473 70 3;
+#X obj 65 320 print;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

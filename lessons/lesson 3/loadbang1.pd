@@ -1,0 +1,7 @@
+#N canvas 380 131 700 500 12;
+#X obj 151 52 loadbang;
+#X msg 151 124 1;
+#X obj 151 202 tgl 100 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
