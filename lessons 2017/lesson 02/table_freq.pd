@@ -1,0 +1,24 @@
+#N canvas 556 68 972 795 12;
+#X obj 57 179 osc~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array1 19 float 3;
+#A 0 35.0571 43.5571 75.3716 43.7999 68.8145 54.7285 45.7428 31.1714
+45.257 50.8428 54.4857 67.1143 60.0714 50.1142 32.8712 57.6429 53.5143
+40.157 40.157;
+#X coords 0 88 19 20 200 140 1 0 0;
+#X restore 186 26 graph;
+#X obj 57 121 tabosc4~ array1;
+#X obj 57 224 *~;
+#X obj 78 203 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 57 255 *~ 0.1;
+#X obj 57 280 dac~;
+#X obj 57 151 mtof~;
+#X floatatom 56 91 5 0 0 0 - - -, f 5;
+#X connect 0 0 3 0;
+#X connect 2 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 7 0 0 0;
+#X connect 8 0 2 0;

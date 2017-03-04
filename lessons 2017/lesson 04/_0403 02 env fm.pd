@@ -1,0 +1,82 @@
+#N canvas 38 29 1278 837 12;
+#X obj 248 227 ui.bpfunc @size 273 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 276 69 env adsr;
+#X obj 155 99 ui.toggle @size 54 54 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @border_color 0.6 0.6 0.6 1 @background_color
+0.93 0.93 0.93 1 @active_color 0 0.75 1 1;
+#X obj 247 440 vline~;
+#X obj 11 9 ui.dsp~ @size 60 60 @fontname "Helvetica" @fontweight "normal"
+@fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)" @pinned
+0 @border_color 0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @active_color
+0 0.75 1 1;
+#X obj 294 526 *~;
+#X obj 592 470 osc~ 1000;
+#X obj 297 592 dac~;
+#X msg 143 175 vline_tgl \$1;
+#X obj 631 118 ui.bpfunc @size 273 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 656 53 env adsr;
+#X obj 920 119 ui.bpfunc @size 273 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 945 54 env adsr;
+#X obj 279 11 loadbang;
+#X obj 713 372 osc~ 1000;
+#X obj 723 415 *~;
+#X obj 630 299 vline~;
+#X obj 917 298 vline~;
+#X obj 552 412 sig~ 440;
+#X msg 546 59 range_y 3000;
+#X obj 852 492 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 860 441 env adsr;
+#X text 18 80 ui.dsp~;
+#X text 165 75 ui.toggle;
+#X obj 74 379 key;
+#X floatatom 72 436 5 0 0 0 - - -, f 5;
+#X obj 125 435 select 122;
+#X obj 130 478 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 759 56 end_seg 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 0 7 1;
+#X connect 6 0 5 1;
+#X connect 8 0 0 0;
+#X connect 8 0 9 0;
+#X connect 8 0 11 0;
+#X connect 9 0 16 0;
+#X connect 10 0 9 0;
+#X connect 11 0 17 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 13 0 10 0;
+#X connect 13 0 12 0;
+#X connect 13 0 19 0;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
+#X connect 16 0 14 0;
+#X connect 17 0 15 1;
+#X connect 18 0 6 0;
+#X connect 19 0 9 0;
+#X connect 19 0 11 0;
+#X connect 21 0 20 0;
+#X connect 24 0 25 0;
+#X connect 24 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 2 0;
+#X connect 28 0 9 0;
+#X connect 28 0 11 0;
+#X connect 28 0 0 0;

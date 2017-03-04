@@ -1,0 +1,68 @@
+#N canvas 273 166 994 547 12;
+#X obj 163 160 osc~;
+#X obj 166 209 *~;
+#X obj 168 292 osc~;
+#X obj 227 251 sig~;
+#X obj 174 359 dac~;
+#X obj 430 -3 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 428 20 metro 100;
+#X obj 151 108 random 3000;
+#X obj 238 106 random 3000;
+#X obj 326 106 random 3000;
+#X obj 662 150 noise.lorenz;
+#X obj 486 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 424 303 ui.sliders @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0.75 0.75 0.75 1 @count 8 @shift -1445.37 @range
+3268.65 @auto_range 1 @show_range 1;
+#X obj 685 274 ui.display @size 250 75 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X msg 332 220 \$1;
+#X msg 428 222 \$3;
+#X msg 379 222 \$2;
+#X obj 140 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 138 46 metro 100;
+#X obj 664 236 pack 0 0 0;
+#X obj 662 183 * 50;
+#X obj 703 180 * 50;
+#X obj 752 236 + 200;
+#X obj 744 186 * 100;
+#X obj 492 142 list.gen 6;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 0 0;
+#X connect 8 0 1 1;
+#X connect 9 0 3 0;
+#X connect 10 0 20 0;
+#X connect 10 1 21 0;
+#X connect 10 2 23 0;
+#X connect 11 0 24 0;
+#X connect 14 0 0 0;
+#X connect 15 0 3 0;
+#X connect 16 0 1 1;
+#X connect 17 0 18 0;
+#X connect 18 0 7 0;
+#X connect 18 0 8 0;
+#X connect 18 0 9 0;
+#X connect 19 0 24 1;
+#X connect 20 0 19 0;
+#X connect 21 0 19 1;
+#X connect 22 0 19 2;
+#X connect 23 0 22 0;
+#X connect 24 0 12 0;
+#X connect 24 0 13 0;
+#X connect 24 0 15 0;
+#X connect 24 0 16 0;
+#X connect 24 0 14 0;
+#X connect 24 1 10 0;

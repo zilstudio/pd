@@ -1,0 +1,76 @@
+#N canvas 276 178 992 529 12;
+#N canvas 225 261 700 500 subpatch 0;
+#X obj 94 40 inlet;
+#X obj 32 39 inlet~;
+#X obj 30 216 outlet~;
+#X obj 34 176 *~;
+#X obj 78 117 sig~;
+#X obj 90 79 / 127;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X restore 120 141 pd subpatch;
+#X obj 122 89 osc~ 440;
+#X obj 123 193 dac~;
+#X obj 285 46 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 280 88 5 0 0 0 - - -, f 5;
+#N canvas 266 207 781 503 vis 0;
+#X obj 21 17 ui.slider @size 15 120 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 20 170 outlet;
+#X obj 72 17 ui.slider @size 15 120 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 71 170 outlet;
+#X obj 126 17 ui.slider @size 15 120 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 125 170 outlet;
+#X obj 177 17 ui.slider @size 15 120 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 176 170 outlet;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X coords 0 -1 1 1 200 150 1 0 0;
+#X restore 427 127 pd vis;
+#X floatatom 429 326 5 0 0 0 - - -, f 5;
+#X floatatom 498 329 5 0 0 0 - - -, f 5;
+#X floatatom 564 325 5 0 0 0 - - -, f 5;
+#X floatatom 623 331 5 0 0 0 - - -, f 5;
+#N canvas 0 23 700 500 subpatch1 0;
+#X obj 104 50 inlet;
+#X obj 42 49 inlet~;
+#X obj 40 226 outlet~;
+#X obj 44 186 *~;
+#X obj 88 127 sig~;
+#X obj 100 89 / 127;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X restore 220 253 pd subpatch1;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 2 8 0;
+#X connect 5 3 9 0;

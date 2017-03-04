@@ -1,0 +1,30 @@
+#N canvas 369 57 1239 731 12;
+#X obj 95 173 *~;
+#X obj 210 93 osc~;
+#X obj 210 118 *~ 0.5;
+#X obj 210 143 +~ 0.5;
+#X obj 95 223 dac~;
+#X obj 95 198 *~ 0.1;
+#X obj 332 78 ui.dsp~ @size 227 227 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @logocolor
+0 0.75 1 1;
+#X floatatom 210 57 5 0 0 0 - - -, f 5;
+#X obj 95 93 osc~ -400;
+#X obj 211 33 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3250 1;
+#X obj 147 251 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @yscale
+1;
+#X obj 296 233 osc.pulse~;
+#X obj 385 238 lfo.pulse~;
+#X connect 0 0 5 0;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 5 0 4 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 7 0;

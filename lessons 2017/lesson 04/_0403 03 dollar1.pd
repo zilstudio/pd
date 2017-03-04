@@ -1,0 +1,50 @@
+#N canvas 169 312 1078 562 12;
+#X msg 620 131 \$3 \$2 \$1;
+#X msg 619 90 10 20 30;
+#X obj 617 182 msg set;
+#X msg 618 230 30 20 10;
+#X msg 156 150 abc;
+#X msg 143 105 set 123;
+#X msg 213 111 set abc;
+#X msg 340 175 1 2 3 4 5;
+#X msg 348 95 1 2 3 4 5;
+#X msg 458 99 30 40 50;
+#X obj 338 134 msg set;
+#X text 132 56 1;
+#X text 348 54 2;
+#X text 613 57 3;
+#X msg 459 200 30 40 50;
+#X msg 451 244 set \$1 \$2 \$3;
+#X msg 450 294 30 40 50;
+#X obj 811 134 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X text 821 197 ui.display;
+#X obj 814 173 ui.display @size 85 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 1 @auto_size 1;
+#X floatatom 776 72 5 0 0 0 - - -, f 5;
+#X obj 823 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 855 70 1 2 3 4 5;
+#X msg 946 71 symbol symbol1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 20 0 17 0;
+#X connect 20 0 19 0;
+#X connect 21 0 17 0;
+#X connect 21 0 19 0;
+#X connect 22 0 17 0;
+#X connect 22 0 19 0;
+#X connect 23 0 17 0;
+#X connect 23 0 19 0;

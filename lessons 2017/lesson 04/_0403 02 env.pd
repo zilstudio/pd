@@ -1,0 +1,84 @@
+#N canvas 124 37 1278 837 12;
+#X obj 255 185 ui.bpfunc @size 273 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 280 120 env adsr;
+#X obj 160 51 ui.toggle @size 54 54 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @border_color 0.6 0.6 0.6 1 @background_color
+0.93 0.93 0.93 1 @active_color 0 0.75 1 1;
+#X obj 191 400 vline~;
+#X obj 194 483 ui.number~ @size 53 16 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @interval 50 @decimal 6 @border_color 0.6 0.6 0.6 1 @background_color
+0.93 0.93 0.93 1 @text_color 0 0 0 1;
+#X obj 11 9 ui.dsp~ @size 60 60 @fontname "Helvetica" @fontweight "normal"
+@fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)" @pinned
+0 @border_color 0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @active_color
+0 0.75 1 1;
+#X obj 299 478 *~;
+#X obj 328 419 osc~ 1000;
+#X obj 303 538 dac~;
+#X obj 68 253 ui.display @size 85 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 1 @auto_size 1;
+#X text 71 275 fix;
+#X msg 158 128 vline_tgl \$1;
+#X text 297 339 release!;
+#X obj 688 84 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 664 36 env adsr;
+#X obj 928 74 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @auto_send 1;
+#X msg 904 26 env adsr;
+#X obj 756 261 ui.display @size 199 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 1010 263 ui.display @size 199 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 755 360 msg set_bpf;
+#X msg 678 403 end_seg 2 1;
+#X obj 677 312 trigger b l;
+#X obj 590 28 ui.bang @size 35 35 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @border_color 0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93
+1 @active_color 0 0.75 1 1;
+#X obj 838 19 ui.bang @size 35 35 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @border_color 0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93
+1 @active_color 0 0.75 1 1;
+#X obj 276 77 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 11 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 6 0 8 0;
+#X connect 6 0 8 1;
+#X connect 7 0 6 1;
+#X connect 11 0 0 0;
+#X connect 11 0 9 0;
+#X connect 13 0 17 0;
+#X connect 13 0 21 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 15 0 21 0;
+#X connect 16 0 15 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 20 0;
+#X connect 21 1 19 0;
+#X connect 22 0 13 0;
+#X connect 23 0 15 0;
+#X connect 24 0 1 0;
+#X connect 24 0 14 0;
+#X connect 24 0 16 0;

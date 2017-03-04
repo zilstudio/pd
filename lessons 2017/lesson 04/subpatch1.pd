@@ -1,0 +1,12 @@
+#N canvas 225 261 700 500 subpatch 1;
+#X obj 94 40 inlet;
+#X obj 32 39 inlet~;
+#X obj 30 216 outlet~;
+#X obj 34 176 *~;
+#X obj 78 117 sig~;
+#X obj 90 79 / 127;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
