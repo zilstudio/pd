@@ -1,0 +1,4 @@
+#N canvas 97 108 624 406 subpatch 1;
+#X obj 64 76 inlet;
+#X obj 89 252 outlet~;
+#X obj 176 96 inlet~;

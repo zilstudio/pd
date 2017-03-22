@@ -1,0 +1,55 @@
+#N canvas -1 33 787 493 10;
+#X obj 48 127 +;
+#X floatatom 46 86 5 0 0 0 - - -, f 5;
+#X floatatom 110 82 5 0 0 0 - - -, f 5;
+#X floatatom 48 159 5 0 0 0 - - -, f 5;
+#X obj 81 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 249 127 list.at;
+#X floatatom 249 164 5 0 0 0 - - -, f 5;
+#X floatatom 295 79 5 0 0 0 - - -, f 5;
+#X obj 222 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 251 48 1 2 3 4;
+#X obj 422 77 trigger;
+#X obj 404 145 t;
+#X obj 271 313 t b s a;
+#X obj 272 350 ui.display @size 85 15 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @display_events
+1 @display_type 1 @auto_size 1;
+#X obj 322 390 ui.display @size 97 15 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @display_events
+1 @display_type 1 @auto_size 1;
+#X obj 345 425 ui.display @size 97 15 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @display_events
+1 @display_type 1 @auto_size 1;
+#X msg 271 278 1 2 3;
+#X msg 325 280 symbol symbol_one;
+#X msg 474 281 message_ 1 2 3;
+#X msg 235 253 list 1 2 3;
+#X obj 525 92 t b a;
+#X obj 537 146 print;
+#X msg 525 65 123;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 1;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 16 0 12 0;
+#X connect 17 0 12 0;
+#X connect 18 0 12 0;
+#X connect 19 0 12 0;
+#X connect 20 0 21 0;
+#X connect 20 1 21 0;
+#X connect 22 0 20 0;

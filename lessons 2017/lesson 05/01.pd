@@ -1,0 +1,7 @@
+#N canvas 0 23 700 500 12;
+#N canvas 97 108 624 406 subpatch 0;
+#X obj 64 76 inlet;
+#X obj 89 252 outlet~;
+#X obj 176 96 inlet~;
+#X restore 31 69 pd subpatch;
+#X obj 195 186 sub1;

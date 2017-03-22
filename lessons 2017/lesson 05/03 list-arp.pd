@@ -1,0 +1,104 @@
+#N canvas 14 33 785 528 10;
+#X obj 21 309 osc~;
+#X obj 40 52 ui.keyboard @size 433 66 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @shift 36
+@keys 61;
+#X obj 18 172 mtof;
+#X obj 19 376 dac~;
+#X obj 73 216 ui.display @size 63 15 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @display_events
+1 @display_type 0 @auto_size 1;
+#X obj 127 140 msg set;
+#X obj 74 376 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @yscale
+1;
+#X msg 127 170 76 0;
+#X text 145 214 ui.display;
+#X obj 495 229 list.gen 8;
+#X obj 494 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 494 295 msg set;
+#X msg 494 325 68 53 68 64 55 54 68 68;
+#X msg 557 304;
+#X floatatom 279 446 5 0 0 0 - - -, f 5;
+#X floatatom 282 305 5 0 0 0 - - -, f 5;
+#X obj 279 337 t b f;
+#X obj 276 368 local.list l1;
+#X obj 540 400 local.list l1;
+#X obj 539 375 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 536 432 ui.display @size 191 15 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @display_events
+1 @display_type 0 @auto_size 1;
+#X obj 275 406 list.at @wrap;
+#X obj 584 6 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 586 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 498 97 +;
+#X floatatom 377 164 5 0 0 0 - - -, f 5;
+#X obj 551 97 + 1;
+#X floatatom 641 4 5 0 0 0 - - -, f 5;
+#X obj 556 132 % 32;
+#X floatatom 665 155 5 0 0 0 - - -, f 5;
+#X obj 557 156 select 0 16;
+#X obj 592 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 602 211 random 3;
+#X obj 601 234 select 0 1 2;
+#X msg 593 262 64;
+#X msg 632 263 65;
+#X msg 667 262 67;
+#X text 680 28 1 metro;
+#X text 586 94 2 counter;
+#X obj 722 235 random.int 48 72;
+#X obj 586 37 metro 125;
+#X text 332 301 3 main;
+#X text 514 197 4 generator;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 2 0 4 0;
+#X connect 5 0 7 0;
+#X connect 9 0 11 0;
+#X connect 9 0 13 0;
+#X connect 9 0 17 0;
+#X connect 9 1 39 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 1 21 1;
+#X connect 17 0 21 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 21 0 14 0;
+#X connect 21 0 2 0;
+#X connect 22 0 40 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 24 0 26 0;
+#X connect 24 0 28 0;
+#X connect 25 0 15 0;
+#X connect 26 0 24 1;
+#X connect 27 0 40 1;
+#X connect 28 0 29 0;
+#X connect 28 0 30 0;
+#X connect 30 0 10 0;
+#X connect 30 1 31 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 33 1 35 0;
+#X connect 33 2 36 0;
+#X connect 34 0 9 1;
+#X connect 35 0 9 1;
+#X connect 36 0 9 1;
+#X connect 39 0 9 1;
+#X connect 40 0 23 0;
