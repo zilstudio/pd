@@ -1,0 +1,29 @@
+#N canvas 90 53 1152 834 12;
+#X obj 103 233 osc~;
+#X obj 54 88 osc~;
+#X text 163 236 carrier несущий;
+#X text 116 86 modulator модулирующий;
+#X obj 125 200 sig~;
+#X floatatom 124 175 5 0 0 0 - - -, f 5;
+#X obj 101 290 dac~;
+#X obj 56 157 *~;
+#X floatatom 95 124 5 0 0 0 - - -, f 5;
+#X text 147 123 index;
+#X floatatom 45 48 5 0 0 0 - - -, f 5;
+#X obj 180 263 ui.scope~ @size 204 189 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @yscale
+1;
+#X obj 334 261 ui.spectroscope~ @size 223 203 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6
+0.6 1;
+#X obj 366 138 osc.sinfb~;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 7 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 7 1;
+#X connect 10 0 1 0;

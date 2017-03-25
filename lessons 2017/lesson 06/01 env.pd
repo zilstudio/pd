@@ -1,0 +1,35 @@
+#N canvas 128 128 975 548 12;
+#X obj 96 135 osc~ 5221;
+#X obj 203 142 osc~ 264;
+#X obj 289 146 osc~ 823;
+#X obj 394 148 osc~ 498;
+#X obj 113 451 dac~;
+#X obj 107 316 *~ 0.25;
+#X obj 529 146 osc~ 1264;
+#X obj 614 152 osc~ 2823;
+#X obj 719 154 osc~ 3498;
+#X obj 403 255 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @auto_send
+1;
+#X msg 391 212 env adsr;
+#X obj 343 222 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 186 360 vline~;
+#X obj 116 406 *~;
+#X msg 507 214 vline;
+#X connect 0 0 5 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 1;
+#X connect 13 0 4 0;
+#X connect 13 0 4 1;
+#X connect 14 0 9 0;

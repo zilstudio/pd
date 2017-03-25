@@ -1,0 +1,121 @@
+#N canvas 216 85 1543 778 12;
+#X obj 161 32 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @shift 36
+@keys 61;
+#X floatatom 161 117 5 0 0 0 - - -, f 5;
+#X obj 230 118 msg set;
+#X msg 230 143 62 0;
+#X floatatom 174 224 5 0 0 0 - - -, f 5;
+#X obj 158 467 osc~;
+#X obj 174 259 sig~;
+#X obj 156 592 dac~;
+#X obj 174 165 mtof;
+#X obj 51 370 osc~;
+#X obj 51 406 *~;
+#X obj 166 549 *~;
+#X obj 310 115 s midi;
+#X obj 931 9 r midi;
+#X msg 931 37 \$2;
+#X floatatom 930 67 5 0 0 0 - - -, f 5;
+#X obj 788 265 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.912987 0.869512 0.501945 1 @bdcolor 0.252949 1
+0.110665 1 @auto_send 1;
+#X obj 1040 267 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @auto_send
+1;
+#X obj 1261 264 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @auto_send
+1;
+#X obj 1184 158 loadbang;
+#X msg 711 195 vline_tgl \$1;
+#X obj 711 132 ui.toggle @size 42 42 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @bgcolor 0.905083 0.912987 0.308281
+1 @bdcolor 0.494041 1 0.011857 1 @crcolor 0 0.75 1 1;
+#X obj 711 100 > 0;
+#X obj 787 449 vline~;
+#X obj 1041 443 vline~;
+#X obj 1261 437 vline~;
+#X msg 882 196 env adsr;
+#X obj 56 334 receive~ freq;
+#X obj 178 333 receive~ idx;
+#X obj 234 458 receive~ amp;
+#X obj 790 512 send~ amp;
+#X obj 1040 503 send~ freq;
+#X obj 1262 503 send~ idx;
+#X msg 1184 198 range_y 3000;
+#X obj 1046 97 expr $f1/127.*3000;
+#X floatatom 1017 148 5 0 0 0 - - -, f 5;
+#X msg 1071 151 range_y \$1;
+#X obj 711 66 t f f;
+#X msg 1309 198 range_y \$1;
+#X obj 1256 29 ui.slider @size 240 69 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 100 @max 1 @bgcolor 0.93
+0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @kncolor 0 0.75 1 1;
+#X msg 1074 51 range_x \$1;
+#X msg 1061 7 100;
+#X msg 1117 13 1000;
+#X obj 467 485 ui.bpfunc @size 200 150 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @bgcolor 0.93 0.93 0.93 1 @bdcolor 0.6 0.6 0.6 1 @auto_send
+0;
+#X obj 466 675 print;
+#X msg 521 445 raw;
+#X msg 431 409 set_rawbpf 0 0 0.5 0.75 1 0.2;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 12 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 4 0 6 0;
+#X connect 5 0 11 0;
+#X connect 6 0 5 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 11 0 7 1;
+#X connect 11 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 37 0;
+#X connect 16 0 23 0;
+#X connect 17 0 24 0;
+#X connect 18 0 25 0;
+#X connect 19 0 26 0;
+#X connect 19 0 33 0;
+#X connect 20 0 16 0;
+#X connect 20 0 17 0;
+#X connect 20 0 18 0;
+#X connect 21 0 20 0;
+#X connect 22 0 21 0;
+#X connect 23 0 30 0;
+#X connect 24 0 31 0;
+#X connect 25 0 32 0;
+#X connect 26 0 16 0;
+#X connect 26 0 17 0;
+#X connect 26 0 18 0;
+#X connect 27 0 9 0;
+#X connect 28 0 10 1;
+#X connect 29 0 11 1;
+#X connect 33 0 18 0;
+#X connect 33 0 17 0;
+#X connect 34 0 35 0;
+#X connect 34 0 36 0;
+#X connect 36 0 17 0;
+#X connect 37 0 22 0;
+#X connect 37 1 34 0;
+#X connect 38 0 18 0;
+#X connect 39 0 38 0;
+#X connect 40 0 16 0;
+#X connect 40 0 17 0;
+#X connect 40 0 18 0;
+#X connect 41 0 40 0;
+#X connect 42 0 40 0;
+#X connect 43 0 44 0;
+#X connect 45 0 43 0;
+#X connect 46 0 43 0;
