@@ -1,0 +1,31 @@
+#N canvas 263 62 700 500 12;
+#X obj 25 -6 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 24 84 unpack 0 0;
+#X obj 23 128 mtof;
+#X obj 22 287 /~ 4;
+#X obj 20 352 dac~;
+#X obj 176 80 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @yscale 1;
+#X obj 121 348 ui.spectroscope~ @size 150 100 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0 0.75 1 1;
+#X obj 24 224 two-osc 1 2;
+#X obj 128 223 two-osc 3 4;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 6 0;
+#X connect 3 0 5 0;
+#X connect 7 0 3 0;
+#X connect 7 1 3 0;
+#X connect 8 0 3 0;
+#X connect 8 1 3 0;

@@ -1,0 +1,23 @@
+#N canvas 100 74 700 500 12;
+#X obj 61 81 inlet;
+#X obj 55 140 * \$1;
+#X obj 110 140 * \$2;
+#X obj 58 180 osc~;
+#X obj 113 183 osc~;
+#X obj 62 227 outlet~;
+#X obj 144 234 outlet~;
+#X msg 253 143 freq \$1;
+#X floatatom 243 94 5 0 0 0 - - -, f 5;
+#X obj 271 200 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;

@@ -1,0 +1,79 @@
+#N canvas 123 23 664 483 12;
+#X floatatom 41 81 5 0 0 0 - - -, f 5;
+#X floatatom 40 173 5 0 0 0 - - -, f 5;
+#X obj 161 74 ui.slider @size 14 349 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 202 19 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 198 406 dac~;
+#X obj 339 166 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 202 119 unpack;
+#X floatatom 262 214 5 0 0 0 - - -, f 5;
+#X floatatom 313 213 5 0 0 0 - - -, f 5;
+#X obj 200 218 mtof;
+#X obj 198 356 *~ 1;
+#X obj 367 260 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 365 215 / 127;
+#X obj 454 306 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @yscale 1;
+#X obj 453 180 ui.spectroscope~ @size 150 100 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0 0.75 1 1;
+#X obj 200 252 osc.pulse~;
+#X obj 184 301 flt.lpf24~ 1000 1;
+#X obj 421 88 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 500 @max 5000;
+#X obj 493 89 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 4;
+#X msg 421 138 freq \$1;
+#X msg 499 141 q \$1;
+#X obj 420 188 ui.display @size 85 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 1 @auto_size 1;
+#X obj 528 179 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X connect 0 0 1 0;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 9 0;
+#X connect 6 1 8 0;
+#X connect 9 0 15 0;
+#X connect 10 0 4 0;
+#X connect 10 0 4 1;
+#X connect 10 0 13 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 0;
+#X connect 15 0 16 0;
+#X connect 16 0 10 0;
+#X connect 17 0 19 0;
+#X connect 17 0 22 0;
+#X connect 18 0 20 0;
+#X connect 19 0 16 0;
+#X connect 19 0 21 0;
+#X connect 20 0 16 0;

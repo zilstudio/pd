@@ -1,0 +1,43 @@
+#N canvas 123 95 664 483 12;
+#X obj 415 287 osc~ 440;
+#X obj 415 368 dac~;
+#X floatatom 41 81 5 0 0 0 - - -, f 5;
+#X floatatom 40 173 5 0 0 0 - - -, f 5;
+#X msg 359 71 0;
+#X msg 361 107 1 2 3;
+#X msg 425 72 0.42;
+#X msg 363 144 symbol abc;
+#X msg 433 105 list 1 2 3;
+#X msg 362 184 selector;
+#X text 361 9 msg - бокс сообщения;
+#X obj 161 74 ui.slider @size 14 349 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @mode 0 @min 0 @max 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 226 241 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X msg 360 37 bang;
+#X obj 222 82 metro 1000;
+#X obj 223 57 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 138 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X msg 492 71 1;
+#X msg 548 73 1;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 3 0;
+#X connect 4 0 12 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
