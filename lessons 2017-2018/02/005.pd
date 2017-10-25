@@ -49,7 +49,7 @@
 #X obj 359 354 oscillator;
 #X obj 511 493 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 196 431 ui.display @size 250 30 @fontname "Helvetica" @fontweight
+#X obj 196 431 ui.display @size 250 45 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
 0.6 1 @display_events 1 @display_type 0 @auto_size 1;
@@ -57,8 +57,7 @@
 #X obj 491 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 395 163 list.each;
-#X obj 521 166 int;
-#X obj 400 206 ui.display @size 127 18 @fontname "Helvetica" @fontweight
+#X obj 400 206 ui.display @size 250 30 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
 0.6 1 @display_events 1 @display_type 0 @auto_size 1;
@@ -66,6 +65,7 @@
 #X msg 715 316 0;
 #X obj 634 298 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 525 162 int;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
 #X connect 4 0 5 0;
@@ -107,10 +107,10 @@
 #X connect 32 0 7 0;
 #X connect 33 0 32 0;
 #X connect 34 0 12 0;
-#X connect 34 0 36 0;
-#X connect 34 1 35 0;
-#X connect 35 0 34 1;
-#X connect 37 0 10 0;
-#X connect 37 1 38 0;
-#X connect 38 0 37 1;
-#X connect 39 0 37 0;
+#X connect 34 0 35 0;
+#X connect 34 1 39 0;
+#X connect 36 0 10 0;
+#X connect 36 1 37 0;
+#X connect 37 0 36 1;
+#X connect 38 0 36 0;
+#X connect 39 0 34 1;

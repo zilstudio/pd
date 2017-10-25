@@ -1,0 +1,20 @@
+#N canvas 0 23 786 551 12;
+#X obj 48 345 dac~;
+#X obj 151 371 ui.spectroscope~ @size 274 100 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0 0.75 1 1;
+#X floatatom 51 147 5 0 0 0 - - -, f 5;
+#X obj 51 176 osc.tri~ 300;
+#X floatatom 204 157 5 0 0 0 - - -, f 5;
+#X obj 204 186 sig~;
+#X obj 47 263 fx.freqshift~;
+#X obj 204 216 lop~ 1000;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 0 0;
+#X connect 6 0 1 0;
+#X connect 6 1 0 1;
+#X connect 7 0 6 1;
