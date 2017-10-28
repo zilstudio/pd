@@ -1,0 +1,53 @@
+#N canvas 0 23 800 551 12;
+#X obj 84 381 +~;
+#X obj 109 489 dac~;
+#X obj 44 315 operator;
+#X obj 52 239 operator;
+#X obj 54 141 operator;
+#X obj 137 313 operator;
+#X obj 157 5 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 152 74 unpack 0 0;
+#X obj 228 105 / 127;
+#X obj 152 100 mtof;
+#X obj 153 129 sig~;
+#X obj 85 415 *~ 0.5;
+#X obj 41 352 *~;
+#X obj 138 351 *~;
+#X obj 234 141 > 0;
+#X obj 233 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 230 198 s _trigger;
+#X obj 404 343 env;
+#X obj 562 341 env;
+#X obj 579 211 envF;
+#X obj 365 206 envF;
+#X obj 365 95 envF;
+#X obj 36 203 *~;
+#X connect 0 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 1;
+#X connect 5 0 13 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 7 1 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
+#X connect 10 0 5 0;
+#X connect 10 0 22 0;
+#X connect 11 0 1 0;
+#X connect 11 0 1 1;
+#X connect 12 0 0 0;
+#X connect 13 0 0 1;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 17 0 12 1;
+#X connect 18 0 13 1;
+#X connect 19 0 5 3;
+#X connect 20 0 2 2;
+#X connect 21 0 22 1;
+#X connect 22 0 3 0;

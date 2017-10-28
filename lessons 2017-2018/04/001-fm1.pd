@@ -1,0 +1,44 @@
+#N canvas 0 23 789 479 12;
+#X obj 79 118 osc~;
+#X obj 126 230 osc~;
+#X obj 125 336 dac~;
+#X obj 286 311 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @yscale 1;
+#X obj 284 192 ui.spectroscope~ @size 495 100 @fontname "Helvetica"
+@fontweight "normal" @fontslant "roman" @fontsize 11 @receive "(null)"
+@send "(null)" @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0 0.75 1 1;
+#X floatatom 153 137 5 0 0 0 - - -, f 5;
+#X obj 397 128 osc~;
+#X floatatom 357 70 5 0 0 0 - - -, f 5;
+#X floatatom 422 67 5 0 0 0 - - -, f 5;
+#X obj 674 141 osc~;
+#X obj 634 48 +~;
+#X obj 696 48 +~;
+#X obj 671 98 +~;
+#X obj 515 119 osc~;
+#X obj 496 56 +~;
+#X obj 558 56 +~;
+#X obj 154 168 sig~;
+#X floatatom 72 79 5 0 0 0 - - -, f 5;
+#X obj 82 176 *~;
+#X floatatom 138 82 5 0 0 0 - - -, f 5;
+#X connect 0 0 18 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 5 0 16 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 12 1;
+#X connect 12 0 9 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
+#X connect 16 0 1 0;
+#X connect 17 0 0 0;
+#X connect 18 0 1 0;
+#X connect 19 0 18 1;
