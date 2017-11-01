@@ -1,0 +1,31 @@
+#N canvas 0 23 759 549 12;
+#X obj 53 77 list.gen 8;
+#X obj 308 136 list.gen 2;
+#X obj 223 9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 53 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 52 218 ui.display @size 634 82 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 223 180 list append;
+#X msg 223 136 255;
+#X obj 407 135 random 100;
+#X msg 308 103 @count \$1;
+#X obj 308 73 random.int 1 10;
+#X obj 223 32 t b b b;
+#X connect 0 0 4 0;
+#X connect 0 1 2 0;
+#X connect 1 0 5 1;
+#X connect 1 1 7 0;
+#X connect 2 0 10 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 5 0;
+#X connect 7 0 1 1;
+#X connect 8 0 1 0;
+#X connect 9 0 8 0;
+#X connect 10 0 6 0;
+#X connect 10 1 1 0;
+#X connect 10 2 9 0;

@@ -1,0 +1,76 @@
+#N canvas 47 23 700 500 12;
+#X obj 85 10 ui.sliders @size 259 113 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0.75 0.75 0.75 1 @count 8 @shift 60 @range 12
+@auto_range 0 @show_range 1;
+#X obj 74 152 list.each;
+#X obj 167 153 int;
+#X obj 74 314 list.shift;
+#X obj 74 246 local.list l1;
+#X obj 224 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 209 257 5 0 0 0 - - -, f 5;
+#X obj 290 203 ui.sliders @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0.75 0.75 0.75 1 @count 8 @shift 60 @range 12
+@auto_range 0 @show_range 1;
+#X obj 74 354 list.stretch;
+#X floatatom 437 149 5 0 0 0 - - -, f 5;
+#X obj 386 39 ui.display @size 150 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 48 426 ui.display @size 250 45 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 341 337 ui.sliders @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @fgcolor 0.75 0.75 0.75 1 @count 8 @shift 61 @range 8
+@auto_range 1 @show_range 1;
+#X obj 529 343 mtof;
+#X obj 529 372 osc~;
+#X obj 529 401 *~ 0.1;
+#X obj 529 445 dac~;
+#X obj 585 366 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 596 332 5 0 0 0 - - -, f 5;
+#X obj 529 286 list.walk 0 @loop;
+#X obj 545 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 549 229 1;
+#X obj 546 196 metro 100;
+#X obj 72 385 list.each;
+#X obj 165 386 int;
+#X obj 590 102 list.at;
+#X obj 588 137 list.count;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 1 1;
+#X connect 3 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 1;
+#X connect 6 0 5 0;
+#X connect 8 0 23 0;
+#X connect 9 0 8 1;
+#X connect 9 0 5 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 17 0 15 1;
+#X connect 19 0 13 0;
+#X connect 19 0 18 0;
+#X connect 20 0 22 0;
+#X connect 21 0 19 0;
+#X connect 22 0 21 0;
+#X connect 23 0 12 0;
+#X connect 23 0 19 0;
+#X connect 23 0 11 0;
+#X connect 23 1 24 0;
+#X connect 24 0 23 1;

@@ -1,0 +1,72 @@
+#N canvas 0 23 789 536 12;
+#X obj 22 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 160 54 0;
+#X obj 22 104 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X text 64 9 1;
+#X obj 22 54 list.gen 16;
+#X obj 381 55 + 10;
+#X msg 271 22 1 2 3;
+#X obj 271 98 ui.display @size 71 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 271 54 list.each;
+#X text 340 19 2;
+#X obj 524 82 list.count_if;
+#X obj 649 47 random 25;
+#X obj 524 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 571 16 3;
+#X obj 653 81 > 10;
+#X obj 574 114 ui.display @size 167 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 575 143 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 524 47 list.gen 8;
+#X obj 646 214 random 25;
+#X obj 521 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 653 250 > 10;
+#X obj 571 281 ui.display @size 167 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 572 310 ui.display @size 47 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 521 214 list.gen 8;
+#X obj 521 249 list.remove_if;
+#X text 568 183 4;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 4 0 2 0;
+#X connect 4 1 1 0;
+#X connect 5 0 8 1;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 8 1 5 0;
+#X connect 10 0 16 0;
+#X connect 10 1 14 0;
+#X connect 11 0 17 1;
+#X connect 12 0 17 0;
+#X connect 14 0 10 1;
+#X connect 17 0 10 0;
+#X connect 17 0 15 0;
+#X connect 17 1 11 0;
+#X connect 18 0 23 1;
+#X connect 19 0 23 0;
+#X connect 20 0 24 1;
+#X connect 23 0 21 0;
+#X connect 23 0 24 0;
+#X connect 23 1 18 0;
+#X connect 24 0 22 0;
+#X connect 24 1 20 0;
