@@ -1,0 +1,50 @@
+#N canvas 0 23 800 551 12;
+#X obj 39 43 _cue 1;
+#X obj 202 44 _cue 2;
+#X obj 361 47 _cue 3;
+#X obj 533 134 keyname;
+#X obj 520 274 select Left Right Space Return;
+#X obj 516 325 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 573 331 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 631 328 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 688 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 533 170 pack 0 s;
+#X obj 533 198 route 1;
+#X obj 533 229 msg symbol;
+#X msg 505 363 -1;
+#X obj 504 412 +;
+#X obj 541 412 f;
+#X msg 552 363 1;
+#X obj 479 450 int;
+#X msg 477 482 \; cue_ \$1;
+#X floatatom 565 474 5 0 0 0 - - -, f 5;
+#X obj 439 306 t b b;
+#X obj 111 123 _cue 4;
+#X obj 244 130 _cue 5;
+#X obj 423 125 _cue 6;
+#X connect 3 0 9 0;
+#X connect 3 1 9 1;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 4 2 7 0;
+#X connect 4 3 8 0;
+#X connect 5 0 12 0;
+#X connect 6 0 15 0;
+#X connect 7 0 19 0;
+#X connect 8 0 16 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 4 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 0 16 1;
+#X connect 13 0 18 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 19 0 16 0;
+#X connect 19 1 6 0;

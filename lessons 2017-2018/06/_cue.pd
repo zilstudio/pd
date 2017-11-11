@@ -1,0 +1,10 @@
+#N canvas 63 75 246 271 12;
+#X obj 0 0 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144 -1 -1
+;
+#X obj 51 122 outlet;
+#X obj 51 62 r cue_;
+#X obj 51 92 select \$1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X coords 0 -1 1 1 28 31 1 0 0;

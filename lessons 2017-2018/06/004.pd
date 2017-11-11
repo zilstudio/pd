@@ -1,0 +1,39 @@
+#N canvas 0 23 787 523 12;
+#X obj 59 384 tl.transport;
+#X obj 250 2 tl.cue @size 50 14 @fontname "Helvetica" @fontweight "normal"
+@fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)" @pinned
+0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1 1;
+#X obj 371 2 tl.cue @size 50 14 @fontname "Helvetica" @fontweight "normal"
+@fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)" @pinned
+0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1 1;
+#X obj 553 2 tl.cue @size 50 14 @fontname "Helvetica" @fontweight "normal"
+@fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)" @pinned
+0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1 1;
+#X obj 266 75 tl.bang @size 60 14 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1
+1;
+#X obj 401 113 tl.bang @size 60 14 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1
+1;
+#X obj 571 113 tl.bang @size 60 14 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0 0.75 1
+1;
+#X obj 263 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 410 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 585 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 95 337 cue 1;
+#X msg 38 343 cue 0;
+#X msg 150 345 cue 2;
+#X text 188 14 tl.cue;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
