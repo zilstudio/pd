@@ -1,0 +1,191 @@
+#N canvas 83 143 1669 829 12;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array1 155944 float 0;
+#X coords 0 1 155943 -1 120 80 1;
+#X restore 65 125 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array2 155944 float 0;
+#X coords 0 1 155943 -1 120 80 1;
+#X restore 65 240 graph;
+#X obj 321 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 321 66 openpanel;
+#X msg 321 95 load \$1 @to array[] @resize;
+#X obj 321 124 snd.file;
+#X obj 321 153 prop-> @channels;
+#X floatatom 321 181 8 0 0 0 - - -, f 8;
+#X floatatom 445 181 5 0 0 0 - - -, f 5;
+#X obj 513 181 print;
+#X text 321 210 play;
+#X obj 1048 556 tabread4~ array1;
+#X obj 1048 505 line~;
+#X obj 1241 208 conv.samp2sec;
+#X obj 1017 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1068 283 float;
+#X floatatom 1311 290 5 0 0 0 - - -, f 5;
+#X obj 1047 674 dac~;
+#X obj 299 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 277 238 local.float lll;
+#X obj 1241 247 * 1000;
+#X obj 1055 420 pack f f f;
+#X obj 963 286 float;
+#X msg 1055 458 \$1 \, \$2 \$3;
+#X obj 649 140 local.float lll;
+#X obj 628 110 t f b;
+#X obj 629 175 *;
+#X obj 629 239 ui.display @size 63 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 633 33 ui.rslider @size 120 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @min 0 @max 1 @sync 1 @border_color
+0.6 0.6 0.6 1 @background_color 0.93 0.93 0.93 1 @knob_color 0 0.75
+1 1;
+#X obj 629 81 unpack 0 0;
+#X obj 726 205 local.float lll;
+#X obj 705 175 t f b;
+#X obj 706 240 *;
+#X obj 763 307 ui.display @size 63 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 644 324 -;
+#X obj 645 291 swap;
+#X obj 644 363 ui.display @size 63 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X text 766 38 ui.rslider;
+#X obj 821 90 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 824 150 lin->lin 0 1 1 10;
+#X floatatom 914 193 5 0 0 0 - - -, f 5;
+#X obj 863 203 t b f;
+#X obj 1221 287 float;
+#X obj 1228 321 / 1;
+#X obj 1005 81 metro 50;
+#X obj 999 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 1233 499 line~;
+#X msg 1160 458 0 \, 3.1415 \$3;
+#X obj 1233 543 expr~ sin($v1);
+#X obj 1138 602 *~;
+#X obj 1137 631 *~;
+#X obj 1049 633 *~;
+#X obj 1073 606 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1195 613 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 641 434 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7701 1;
+#X obj 668 466 +;
+#X obj 806 406 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 0.05;
+#X obj 636 507 pack f f;
+#X obj 806 474 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 816 368 random.float 0.3 0.7;
+#X obj 1077 146 random.float 0 0.5;
+#X obj 1093 85 random.float 20 40;
+#X msg 1311 107 @max \$1;
+#X msg 1271 48 @max \$1;
+#X msg 919 412 @max \$1;
+#X obj 873 560 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7800 1;
+#X obj 1357 69 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 1270 17 hsl 128 15 25 150 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7800 1;
+#X obj 754 678 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5600 1;
+#X msg 745 720 @min \$1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 6 2 9 0;
+#X connect 7 0 19 0;
+#X connect 11 0 49 0;
+#X connect 11 0 51 0;
+#X connect 12 0 11 0;
+#X connect 13 0 20 0;
+#X connect 14 0 15 0;
+#X connect 14 0 22 0;
+#X connect 15 0 21 1;
+#X connect 18 0 7 0;
+#X connect 20 0 16 0;
+#X connect 20 0 42 0;
+#X connect 21 0 23 0;
+#X connect 21 0 47 0;
+#X connect 22 0 21 0;
+#X connect 23 0 12 0;
+#X connect 24 0 26 1;
+#X connect 25 0 26 0;
+#X connect 25 1 24 0;
+#X connect 26 0 27 0;
+#X connect 26 0 35 0;
+#X connect 26 0 22 1;
+#X connect 28 0 29 0;
+#X connect 29 0 25 0;
+#X connect 29 1 31 0;
+#X connect 30 0 32 1;
+#X connect 31 0 32 0;
+#X connect 31 1 30 0;
+#X connect 32 0 33 0;
+#X connect 32 0 35 1;
+#X connect 32 0 15 1;
+#X connect 34 0 36 0;
+#X connect 34 0 13 0;
+#X connect 35 0 34 0;
+#X connect 35 1 34 1;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 39 0 41 0;
+#X connect 41 0 42 0;
+#X connect 41 1 43 1;
+#X connect 42 0 43 0;
+#X connect 43 0 21 2;
+#X connect 44 0 14 0;
+#X connect 44 0 59 0;
+#X connect 44 0 60 0;
+#X connect 44 0 61 0;
+#X connect 45 0 44 0;
+#X connect 46 0 48 0;
+#X connect 47 0 46 0;
+#X connect 48 0 49 1;
+#X connect 49 0 50 0;
+#X connect 50 0 17 1;
+#X connect 50 0 17 0;
+#X connect 51 0 17 1;
+#X connect 51 0 17 0;
+#X connect 52 0 51 1;
+#X connect 53 0 50 1;
+#X connect 54 0 55 0;
+#X connect 54 0 57 0;
+#X connect 55 0 57 1;
+#X connect 56 0 55 1;
+#X connect 56 0 58 0;
+#X connect 57 0 28 0;
+#X connect 58 0 54 0;
+#X connect 59 0 54 0;
+#X connect 60 0 38 0;
+#X connect 61 0 44 1;
+#X connect 62 0 60 0;
+#X connect 63 0 61 0;
+#X connect 64 0 59 0;
+#X connect 65 0 64 0;
+#X connect 66 0 62 0;
+#X connect 67 0 63 0;
+#X connect 68 0 69 0;
+#X connect 69 0 59 0;
