@@ -1,0 +1,259 @@
+#N canvas 0 23 800 550 12;
+#X obj 62 238 two-osc;
+#X obj 198 237 two-osc;
+#X obj 59 338 filters;
+#X obj 64 21 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 63 89 unpack;
+#X obj 63 121 mtof;
+#X obj 62 154 sig~;
+#X obj 198 272 *~;
+#X obj 439 143 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 253 304 *~;
+#X obj 537 36 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 556 60 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 658 33 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 677 57 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 641 177 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 5000;
+#X obj 697 178 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 3.14;
+#X obj 382 274 sig~;
+#X obj 438 275 sig~;
+#X obj 35 498 dac~;
+#X obj 591 111 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
+#X obj 353 120 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 341 178 sig~;
+#X obj 535 346 osc~;
+#X obj 535 294 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 20;
+#X obj 672 302 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 582 397 *~;
+#X obj 724 301 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 665 398 *~;
+#X obj 589 348 osc~;
+#X obj 589 296 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 20;
+#X obj 299 117 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 287 175 sig~;
+#X obj 216 112 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 204 170 sig~;
+#X obj 162 109 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 150 167 sig~;
+#X obj 530 484 osc~;
+#X obj 530 432 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 20;
+#X obj 667 435 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 577 535 *~;
+#X obj 719 439 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1;
+#X obj 652 532 *~;
+#X obj 584 486 osc~;
+#X obj 584 434 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 20;
+#X obj 57 445 env.adsr~;
+#X msg 89 401 attack \$1;
+#X msg 188 403 decay \$1;
+#X msg 278 403 sustain \$1;
+#X msg 383 406 release \$1;
+#X obj 157 342 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1000;
+#X obj 204 342 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1000;
+#X obj 380 348 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 1 @max 100;
+#X obj 299 342 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 1 @max 1000;
+#X obj 111 157 > 1;
+#X text 591 4 !!! www.automatonism.com;
+#X msg 7 372 trigger \$1;
+#X obj 523 195 osc~;
+#X obj 523 143 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 20;
+#X obj 569 145 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 50;
+#X obj 570 246 *~;
+#X obj 100 535 env.adsr~;
+#X msg 134 502 attack \$1;
+#X msg 230 496 decay \$1;
+#X msg 320 496 sustain \$1;
+#X msg 425 499 release \$1;
+#X obj 199 435 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1000;
+#X obj 246 435 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1000;
+#X obj 422 441 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 1 @max 100;
+#X obj 341 435 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 1 @max 1000;
+#X obj 79 475 sig~ 5000;
+#X text 634 129 ui.radio;
+#X obj 438 199 ui.knob @size 40 40 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @knob_color 0 0.75 1 1 @scale_color 0.6 0.6 0.6 1 @show_range
+0 @draw_active 0 @min 0 @max 1000;
+#X connect 0 0 2 0;
+#X connect 1 0 7 0;
+#X connect 1 0 9 0;
+#X connect 2 0 44 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 53 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 1;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
+#X connect 11 0 0 2;
+#X connect 12 0 1 1;
+#X connect 13 0 1 2;
+#X connect 14 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 2 2;
+#X connect 17 0 2 3;
+#X connect 19 0 2 1;
+#X connect 20 0 21 0;
+#X connect 21 0 1 4;
+#X connect 22 0 25 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 1;
+#X connect 25 0 0 4;
+#X connect 26 0 27 1;
+#X connect 27 0 1 4;
+#X connect 28 0 27 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 0 4;
+#X connect 32 0 33 0;
+#X connect 33 0 1 3;
+#X connect 34 0 35 0;
+#X connect 35 0 0 3;
+#X connect 36 0 39 0;
+#X connect 37 0 36 0;
+#X connect 38 0 39 1;
+#X connect 39 0 0 3;
+#X connect 40 0 41 1;
+#X connect 41 0 1 3;
+#X connect 42 0 41 0;
+#X connect 43 0 42 0;
+#X connect 44 0 18 1;
+#X connect 44 0 18 0;
+#X connect 45 0 44 0;
+#X connect 46 0 44 0;
+#X connect 47 0 44 0;
+#X connect 48 0 44 0;
+#X connect 49 0 45 0;
+#X connect 50 0 46 0;
+#X connect 51 0 48 0;
+#X connect 52 0 47 0;
+#X connect 53 0 55 0;
+#X connect 55 0 44 0;
+#X connect 55 0 60 0;
+#X connect 56 0 59 0;
+#X connect 57 0 56 0;
+#X connect 58 0 59 1;
+#X connect 59 0 0 0;
+#X connect 60 0 2 2;
+#X connect 61 0 60 0;
+#X connect 62 0 60 0;
+#X connect 63 0 60 0;
+#X connect 64 0 60 0;
+#X connect 65 0 61 0;
+#X connect 66 0 62 0;
+#X connect 67 0 64 0;
+#X connect 68 0 63 0;
+#X connect 69 0 60 0;
+#X connect 71 0 9 1;

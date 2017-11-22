@@ -1,0 +1,44 @@
+#N canvas 50 23 700 500 12;
+#X msg 102 276 connect localhost 3000;
+#X msg 346 219 connect localhost 3005;
+#X obj 88 113 snapshot~;
+#X obj 183 50 metro 33;
+#X obj 183 24 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 290 322 oscformat;
+#X obj 566 118 list prepend send;
+#X obj 566 149 list trim;
+#X obj 500 82 oscformat osc;
+#X obj 392 276 netsend -u -b;
+#X obj 61 215 list prepend send;
+#X obj 61 246 list trim;
+#X obj 61 184 oscformat osc;
+#X obj 102 307 netsend -u -b;
+#X obj 66 24 adc~ 1;
+#X obj 88 51 abs~;
+#X obj 88 82 lop~ 1;
+#X obj 248 161 ui.display @size 103 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 239 125 oscparse;
+#X obj 290 72 netreceive -u -b;
+#X msg 298 42 listen 10000;
+#X connect 0 0 13 0;
+#X connect 1 0 9 0;
+#X connect 2 0 8 0;
+#X connect 2 0 12 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 10 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 2 0;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
