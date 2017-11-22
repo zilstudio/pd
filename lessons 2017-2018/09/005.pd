@@ -1,0 +1,40 @@
+#N canvas 151 224 968 747 12;
+#X obj 37 39 noise~;
+#X obj 103 191 delwrite~ ks 1000;
+#X obj 83 431 delread~ ks;
+#X obj 78 494 dac~;
+#X obj 167 149 click~;
+#X obj 174 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 86 371 5 0 0 0 - - -, f 5;
+#X obj 256 339 *~ 0.98;
+#X obj 408 34 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 401 201 mtof;
+#X msg 403 165 \$1;
+#X obj 458 291 ui.display @size 55 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 403 241 expr 1000/$f1;
+#X obj 438 116 stripnote;
+#X obj 255 394 lop~ 2000;
+#X floatatom 350 339 5 0 0 0 - - -, f 5;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 2 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 14 0;
+#X connect 8 0 10 0;
+#X connect 8 0 13 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 12 0 11 0;
+#X connect 12 0 6 0;
+#X connect 13 0 5 0;
+#X connect 14 0 1 0;
+#X connect 15 0 14 1;
