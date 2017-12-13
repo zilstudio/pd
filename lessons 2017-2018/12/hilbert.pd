@@ -1,0 +1,34 @@
+#N canvas 399 142 700 500 12;
+#N canvas 427 191 659 403 olli~ 0;
+#X obj 264 56 inlet~;
+#X obj 39 237 outlet~;
+#X obj 299 239 outlet~;
+#X text 37 289 y[n]=b1*y[n-1]+b2*y[n-2]+a0*x[n]+a1*x[n-1]+a2*x[n-2]
+;
+#X text 36 270 Pd's biquad:;
+#X obj 39 112 biquad~ 0 0.161758 0.161758 0 -1;
+#X obj 39 141 biquad~ 0 0.733029 0.733029 0 -1;
+#X obj 39 173 biquad~ 0 0.94535 0.94535 0 -1;
+#X obj 39 200 biquad~ 0 0.990598 0.990598 0 -1;
+#X obj 264 112 biquad~ 0 0.479401 0.479401 0 -1;
+#X obj 264 142 biquad~ 0 0.876218 0.876218 0 -1;
+#X obj 264 174 biquad~ 0 0.976599 0.976599 0 -1;
+#X obj 264 202 biquad~ 0 0.9975 0.9975 0 -1;
+#X text 91 238 first phase;
+#X text 373 242 second phase;
+#X text 167 238 << 90 degree >>;
+#X text 40 25 Olli Niemitalo's quadrature transformer coefficients
+;
+#X obj 264 85 cyclone/delay~ 1 1;
+#X connect 0 0 5 0;
+#X connect 0 0 17 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 2 0;
+#X connect 17 0 9 0;
+#X restore 38 285 pd olli~;

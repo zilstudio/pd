@@ -1,0 +1,158 @@
+#N canvas 0 56 1906 919 12;
+#X obj 413 818 dac~ 1 2;
+#X obj 323 32 loadbang;
+#X msg 294 95 0.5;
+#X obj 241 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 696 378 env;
+#X floatatom 729 300 5 0 0 0 - - -, f 5;
+#X floatatom 825 303 5 0 0 0 - - -, f 5;
+#X obj 920 364 env;
+#X floatatom 964 305 5 0 0 0 - - -, f 5;
+#X floatatom 1039 307 5 0 0 0 - - -, f 5;
+#X obj 1153 371 env;
+#X floatatom 1193 304 5 0 0 0 - - -, f 5;
+#X floatatom 1281 295 5 0 0 0 - - -, f 5;
+#X msg 721 240 -5;
+#X msg 958 248 -7;
+#X msg 1201 251 -2;
+#X obj 1393 371 env;
+#X floatatom 1432 311 5 0 0 0 - - -, f 5;
+#X floatatom 1520 302 5 0 0 0 - - -, f 5;
+#X msg 1440 258 -1;
+#X obj 399 569 osc, f 5;
+#X obj 393 358 ui.slider2d @size 100 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @show_range 1 @shift_x 0 @range_x 1 @shift_y 0 @range_y
+1;
+#X obj 374 482 unpack 0 0;
+#X floatatom 370 513 5 0 0 0 - - -, f 5;
+#X obj 285 511 sig~;
+#X floatatom 280 467 5 0 0 0 - - -, f 5;
+#X obj 622 203 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @yscale 1;
+#X obj 435 783 lop~ 18000;
+#X obj 132 594 osc, f 5;
+#X obj 126 383 ui.slider2d @size 100 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @presetname "(null)" @background_color 0.93 0.93 0.93 1 @border_color
+0.6 0.6 0.6 1 @show_range 1 @shift_x 0 @range_x 1 @shift_y 0 @range_y
+1;
+#X obj 107 507 unpack 0 0;
+#X floatatom 103 538 5 0 0 0 - - -, f 5;
+#X obj 179 626 *~;
+#X obj 279 258 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12500 1;
+#X obj 433 714 *~;
+#X obj 612 276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 454 654 freqshift;
+#X floatatom 580 530 5 0 0 0 - - -, f 5;
+#X obj 572 615 *~;
+#X obj 575 558 sig~;
+#X floatatom 302 301 5 0 0 0 - - -, f 5;
+#X obj 294 386 *~;
+#X obj 297 329 sig~;
+#X obj 33 440 *~;
+#X obj 36 383 sig~;
+#X obj 34 281 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 57 324 5 0 0 0 - - -, f 5;
+#X obj 450 75 ui.keyboard @size 433 60 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @shift 36 @keys 61;
+#X obj 450 204 unpack 0 0;
+#X obj 454 271 mtof;
+#X obj 678 732 ui.scope~ @size 150 100 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @yscale 1;
+#X obj 449 746 *~ 0.5;
+#X obj 44 218 list.gen 2;
+#X obj 150 224 random.float 0 1;
+#X obj 43 254 list.gen 2;
+#X obj 149 260 random.float 0 1;
+#X obj 465 162 stripnote;
+#X obj 426 605 lop~ 1000;
+#X obj 244 596 lop~ 1000;
+#X msg 1013 116 300;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 2 0 14 0;
+#X connect 2 0 15 0;
+#X connect 2 0 19 0;
+#X connect 3 0 2 0;
+#X connect 4 0 43 1;
+#X connect 5 0 4 1;
+#X connect 6 0 4 2;
+#X connect 7 0 41 1;
+#X connect 8 0 7 1;
+#X connect 9 0 7 2;
+#X connect 10 0 38 1;
+#X connect 11 0 10 1;
+#X connect 12 0 10 2;
+#X connect 13 0 5 0;
+#X connect 14 0 8 0;
+#X connect 15 0 11 0;
+#X connect 16 0 34 1;
+#X connect 17 0 16 1;
+#X connect 18 0 16 2;
+#X connect 19 0 17 0;
+#X connect 20 0 57 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 22 0 20 1;
+#X connect 22 1 20 2;
+#X connect 24 0 20 0;
+#X connect 25 0 24 0;
+#X connect 27 0 0 0;
+#X connect 27 0 0 1;
+#X connect 27 0 50 0;
+#X connect 28 0 32 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 30 0 28 1;
+#X connect 30 1 28 2;
+#X connect 32 0 58 0;
+#X connect 33 0 40 0;
+#X connect 34 0 51 0;
+#X connect 35 0 4 0;
+#X connect 35 0 7 0;
+#X connect 35 0 10 0;
+#X connect 35 0 16 0;
+#X connect 35 0 37 0;
+#X connect 35 0 52 0;
+#X connect 35 0 54 0;
+#X connect 36 0 34 0;
+#X connect 37 0 39 0;
+#X connect 38 0 36 1;
+#X connect 39 0 38 0;
+#X connect 40 0 42 0;
+#X connect 41 0 32 1;
+#X connect 42 0 41 0;
+#X connect 43 0 28 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 44 0;
+#X connect 47 0 56 0;
+#X connect 48 0 49 0;
+#X connect 48 0 35 0;
+#X connect 49 0 25 0;
+#X connect 51 0 27 0;
+#X connect 52 0 29 0;
+#X connect 52 1 53 0;
+#X connect 53 0 52 1;
+#X connect 54 0 21 0;
+#X connect 54 1 55 0;
+#X connect 55 0 54 1;
+#X connect 56 0 48 0;
+#X connect 57 0 36 0;
+#X connect 58 0 20 0;
+#X connect 59 0 6 0;
+#X connect 59 0 9 0;
+#X connect 59 0 12 0;
+#X connect 59 0 18 0;
